@@ -16,4 +16,15 @@ public class StudentRepo {
     public Optional<Student> findStudentById(String id) {
         return Optional.ofNullable(students.get(id));
     }
+
+    public Student findById(String id) {
+        List<Student> students = getAllStudents();
+        for(Student student : students) {
+            if(student.id().equals(id)) {
+                return student;
+            }
+        }
+
+        return null;
+    }
 }
