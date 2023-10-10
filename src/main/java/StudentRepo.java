@@ -24,7 +24,6 @@ public class StudentRepo {
                 return student;
             }
         }
-
-        return null;
+        throw  new StudentNotFoundException("The student with the ID: " + id +" can't be found");
     }
 }
